@@ -4,6 +4,6 @@
     = f.collection_select :shelter_id, Shelter.order(:name), :id, :name
   div.field
     = f.label :user
-    = f.collection_select :user_id, User.order(:last_name, :first_name), :id, :last_name
+    = f.collection_select :user_id, User.order(:last_name, :first_name), :id, :name
   div.actions
     = f.submit
