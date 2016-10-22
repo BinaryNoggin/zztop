@@ -16,6 +16,8 @@
           td.ssn = user.ssn
           td.dob = user.dob
           td.phone_number = user.phone_number
+          td.actions
+            = link_to 'Edit', edit_user_path(user)
 - else
   p No users yet.
 
