@@ -5,16 +5,14 @@
         th Shelter
         th Last Name
         th First Name
-        th Check-In
-        th Check-Out
+        th Date
     tbody
       - for stay in @stays
         tr
           td.shelter = stay.shelter.name
           td.last_name = stay.user.last_name
           td.first_name = stay.user.first_name
-          td.check_in_date = stay.check_in_date
-          td.check_out_date = stay.check_out_date
+          td.date = stay.created_at
           td.actions
             = link_to 'Edit', edit_stay_path(stay)
 - else
