@@ -1,0 +1,15 @@
+= form_for(@user) do |f|
+  div.field
+    = f.label :first_name
+    = f.text_field :first_name
+  div.field
+    = f.label :last_name
+    = f.text_field :last_name
+  div.field
+    = f.label :ssn
+    = f.text_field :ssn
+  div.field
+    = f.label :dob
+    = f.text_field :dob
+  div.actions
+    = f.submit

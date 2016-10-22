@@ -1,0 +1,21 @@
+- unless @users.nil?
+  table#users
+    thead
+      tr
+        th First Name
+        th Last Name
+        th SSN
+        th DOB
+    tbody
+      - for user in @users
+        tr
+          td.first_name = user.first_name
+          td.last_name = user.first_name
+          td.ssn = user.ssn
+          td.dob = user.dob
+- else
+  p No users yet.
+
+br
+  .actions
+    a href="/users/new" Add User 
