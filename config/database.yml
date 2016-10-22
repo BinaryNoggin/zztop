@@ -11,13 +11,13 @@ default: &default
 
 development:
   <<: *default
-  database: --skip-test-unit_development
+  database: zztop_development
   password:
   host: localhost
 
 test: &test
   <<: *default
-  database: --skip-test-unit_test
+  database: zztop_test
   password:
   host: localhost
 

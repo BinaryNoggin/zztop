@@ -1,0 +1,26 @@
+- unless @users.nil?
+  table#users
+    thead
+      tr
+        th Last Name
+        th First Name
+        th SSN
+        th DOB
+        th Phone Number
+        th Actions
+    tbody
+      - for user in @users
+        tr
+          td.last_name = user.first_name
+          td.first_name = user.first_name
+          td.ssn = user.ssn
+          td.dob = user.dob
+          td.phone_number = user.phone_number
+          td.actions
+            = link_to 'Edit', edit_user_path(user)
+- else
+  p No users yet.
+
+br
+  .actions
+    a href="/users/new" Add User 
