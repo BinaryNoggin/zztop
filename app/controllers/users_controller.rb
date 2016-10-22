@@ -1,11 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    if params[:user_id]
-      @users = User.where(id: params[:user_id])
-    else
-      @users = User.all
-    end
+    @users = User.order(:last_name, :first_name).all
   end
 
   def new
@@ -13,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def create
@@ -26,18 +23,15 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to @user, notice: 'User successfully updated.'
+      redirect_to action: 'index', notice: 'User successfully updated.'
     else
       render action: 'edit'
     end
   end
 
 private
-
-  def set_user
-    @user = User.includes(:columns, :records).find(params[:id])
-  end
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :ssn, :dob, :phone_number)
