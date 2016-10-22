@@ -1,0 +1,10 @@
+tr
+  td.last_name = user.first_name
+  td.first_name = user.first_name
+  td.ssn = user.ssn
+  td.dob = user.dob
+  td.phone_number = user.phone_number
+  td.actions
+    ul
+      li= link_to 'Edit', edit_user_path(user)
+      li= link_to 'Call', home_path
