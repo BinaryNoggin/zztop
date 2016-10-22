@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <title><%= h((yield(:title) || 'Untitled') + SITE_TITLE) %></title>
+
+    <!-- Declare UTF-8 character encoding, for situations where we don't have a web server to do so for us. -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Google will display this in its search results. TODO: Determine if the page wants to set this. -->
+    <meta name="description" content="" />
+
+    <!-- Favorites icon for IE5+ and W3C-compliant browsers. -->
+    <!-- The Rails Logo (downloaded from http://railslogo.com) was created by Kevin Milden and is distrubuted under the BY-ND Creative Commons Licence. -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.ico" /> <!-- TODO: Add 32x32 and 64x64 icons to the ICO file. -->
+
+    <!-- Tell IE6 not to add Image Toolbar to images, nor SmartTags. -->
+    <meta http-equiv="imagetoolbar"        content="false" /> <!-- See http://www.microsoft.com/windows/ie/using/howto/customizing/imgtoolbar.mspx -->
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+
+<% if GOOGLE_ANALYTICS_CODE %>
+    <!-- Google Analytics code. (Used only by my JavaScript code.) -->
+    <meta name="google.analytics.code" content="<%= GOOGLE_ANALYTICS_CODE %>" />
+<% end %>
+
+<% if GOOGLE_WEBMASTERS_CODE %>
+    <!-- Allow use of Google Webmaster Tools (http://www.google.com/webmasters/) to see how Google views your site. -->
+    <meta name="verify-v1" content="<%= GOOGLE_WEBMASTERS_CODE %>" />
+<% end %>
+
+    <!-- Make sure all CSS stylesheets come before all JavaScript. (http://code.google.com/speed/page-speed/docs/rtt.html#PutStylesBeforeScripts) -->
+    <% # Combine all stylesheets into a single CSS file (possibly excepting IE-specific file(s)), preferably compressed. %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => false %>
+
+    <!-- Make ABBR elements work in all versions of IE. See http://xopus.com/devblog/2008/style-unknown-elements.html -->
+    <script type="text/javascript">document.createElement('abbr');</script>
+
+    <!-- Include jQuery. If production, pull it from Google. -->
+    <!-- %= jquery_include_tag % -->
+
+    <!-- Include all other JavaScript files. If production, minimize and combine into a single file. -->
+    <%= javascript_include_tag "application", "data-turbolinks-track" => false %>
+    <%= javascript_include_tag 'boochtek/google-analytics' if GOOGLE_ANALYTICS_CODE %>
+
+    <!-- Make sure we're not subject to CSRF attacks. -->
+    <%= csrf_meta_tags %>
+
+    <% # TODO: More header/footer stuff. %>
+    <%= yield(:head) %>
+
+  </head>
+
+  <!-- Provide a CSS signature, derived from site's URI. (http://archivist.incutio.com/viewlist/css-discuss/13291) -->
+  <body id="<%= CSS_SIGNATURE %>">
+
+    <header>
+      <h1><a href="/"><%= SITE_NAME %></a></h1>
+    </header>
+
+    <div id="container">
+      <div id="flash">
+<% flash.each do |name, msg| %>
+        <%= content_tag :div, h(msg), :id => "flash_#{name}" %>
+<% end %>
+      </div>
+
+      <%= yield %>
+    </div>
+
+    <footer>
+      <div id="copyright">
+        Copyright &copy; <%= COPYRIGHT_YEARS %> by <%= COPYRIGHT_OWNER %>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
