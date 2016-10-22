@@ -2,6 +2,7 @@ class CreateHistories < ActiveRecord::Migration[5.0]
   def change
     create_table :histories do |t|
       t.references :user, foreign_key: true
+      t.string :zipcode
       t.boolean :needs_shelter
       t.integer :rating
       t.boolean :fleeing

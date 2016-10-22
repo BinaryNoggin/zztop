@@ -32,6 +32,8 @@ def make_user()
   }
 end
 
+sample_zipcodes = %w[63106 63106 63106 63105 63105 63103 63115 63118 63132 63131 63123 63122 63102 63104 630201 63107 63109 63130 63125 63112 63119]
+
 1000.times do |user_count|
   user = User.create(make_user)
   now = Date.today
@@ -40,6 +42,8 @@ end
     needs_shelter = Random.rand < 0.25
     date = now - i.days
     History.create(user: user,
+                   # simulate phone sign ins from random St Louis locations
+                   zipcode: sample_zipcodes.sample,
                    needs_shelter: needs_shelter,
                    fleeing: Random.rand < (needs_shelter ? 0.60 : 0.05),
                    incarcerated: Random.rand < 0.03,
