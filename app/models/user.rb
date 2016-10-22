@@ -20,7 +20,26 @@
 #  exchange_for_sex      :boolean
 #  sex                   :string
 #  vet_status            :boolean
+#  grade                 :decimal(8, 5)
 #
 
 class User < ApplicationRecord
+
+  def letter_grade
+    case grade
+    when 80..100
+      'F'
+    when 65...80
+      'D'
+    when 50...65
+      'C'
+    when 30...50
+      'B'
+    when 0...30
+      'A'
+    else
+      ''
+    end
+  end
+
 end
