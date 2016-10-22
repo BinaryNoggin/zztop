@@ -1,6 +1,8 @@
 .actions
-  a href="/users/new" Add Client
+  = button_to 'Add Client', new_user_path, method: :get
+
 br
+
 - unless @users.nil?
   table#users
     thead

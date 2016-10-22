@@ -1,3 +1,8 @@
+.actions
+  = button_to 'Check in a Client', new_stay_path, method: :get
+
+br
+
 - unless @stays.nil?
   table#stays
     thead
@@ -6,6 +11,7 @@
         th Last Name
         th First Name
         th Date
+        th Actions
     tbody
       - for stay in @stays
         tr
@@ -14,10 +20,6 @@
           td.first_name = stay.user.first_name
           td.date = stay.created_at
           td.actions
-            = link_to 'Edit', edit_stay_path(stay)
+            = button_to 'Edit', edit_stay_path(stay), method: :get
 - else
   p No stays yet.
-
-br
-  .actions
-    a href="/stays/new" Add Stay
