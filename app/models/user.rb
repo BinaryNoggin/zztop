@@ -42,4 +42,11 @@ class User < ApplicationRecord
     end
   end
 
+  def name
+    "#{first_name} #{last_name}"
+  end
+
+  def entered_on
+    created_at.to_date
+  end
 end
