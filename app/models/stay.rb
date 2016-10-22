@@ -2,13 +2,11 @@
 #
 # Table name: stays
 #
-#  id             :integer          not null, primary key
-#  user_id        :integer
-#  shelter_id     :integer
-#  check_in_date  :date
-#  check_out_date :date
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  shelter_id :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 # Indexes
 #
