@@ -59,7 +59,6 @@ gem 'factory_girl_rails', '~> 4.4', groups: ["development", "test"]
 gem 'shoulda', '~> 3.5', groups: ["test"]
 gem 'jasmine', '~> 2.0', groups: ["development", "test"]
 gem 'sidekiq', '~> 3.2'
-gem 'metric_fu', '~> 4.11', groups: ["development", "test"]
 gem 'slim-rails', '~> 3.1'
 gem 'haml', '~> 4.0'
 gem 'rails-footnotes', '~> 4.1', groups: [:development]
