@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  display: block;
+  background: linear-gradient(to right, #257bc4, #25b5c4);
+  background-image: linear-gradient(to right, rgb(37, 123, 196), rgb(37, 181, 196));
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+  font-family: 'Roboto', sans-serif;
+ }
