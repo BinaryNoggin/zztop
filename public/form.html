@@ -6,7 +6,38 @@
     <title>css for hackathon</title>
     <link rel="stylesheet" type="text/css" href="../app/assets/stylesheets/application.css" />
     <link rel="stylesheet" type="text/css" href="../app/assets/stylesheets/table.css" />
-    </head>
-    <body>
-    </body>
-  </html>
+  </head>
+  <body>
+    <div id="container">
+      <div id="flash">
+      </div>
+      <form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post">
+        <input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="authenticity_token" value="i92vrvq8hZdwFul5S7gaU85+ug2p/mZYP6S3Ilr5iUUz6gQtW3B91a4zflmazToxunYpKg8FNnQaYc6j3FmC2g==" />
+        <div class="field">
+          <label for="user_first_name">First name</label>
+          <input type="text" name="user[first_name]" id="user_first_name" />
+        </div>
+        <div class="field">
+          <label for="user_last_name">Last name</label>
+          <input type="text" name="user[last_name]" id="user_last_name" />
+        </div>
+        <div class="field">
+          <label for="user_ssn">Ssn</label>
+          <input type="text" name="user[ssn]" id="user_ssn" />
+        </div>
+        <div class="field">
+          <label for="user_dob">Dob</label>
+          <input type="date" name="user[dob]" id="user_dob" />
+        </div>
+        <div class="field">
+          <label for="user_phone_number">Phone number</label>
+          <input type="text" name="user[phone_number]" id="user_phone_number" />
+        </div>
+        <div class="actions">
+          <input type="submit" name="commit" value="Create User" data-disable-with="Create User" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
