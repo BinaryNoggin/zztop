@@ -25,6 +25,15 @@ def make_user()
 
 		:sex => ['Male', 'Female', 'Other', 'Don\'t Know'].sample,
 		:vet_status => [0,1].sample,
+
+		:fleeing => [0, 1].sample,
+		:incarcerated => [0, 1].sample,
+		:welfare => [0, 1].sample,
+		:insufficent_income => [0, 1].sample,
+		:alcohol_or_drug_abuse => [0, 1].sample,
+		:physical_health_issue => [0, 1].sample,
+		:mental_health_issue => [0, 1].sample,
+		:exchange_for_sex => [0, 1].sample,
 		# "UUID" => Faker::Number.number(10),
 		# "First_Name" => Faker::Name.first_name,
 		# "Middle_Name" => Faker::Name.first_name,
