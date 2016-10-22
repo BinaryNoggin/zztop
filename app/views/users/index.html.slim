@@ -1,3 +1,6 @@
+.actions
+  a href="/users/new" Add Client
+br
 - unless @users.nil?
   table#users
     thead
@@ -13,7 +16,3 @@
       = render @users
 - else
   p No clients yet.
-
-br
-  .actions
-    a href="/users/new" Add Client
