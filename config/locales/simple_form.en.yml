@@ -1,0 +1,41 @@
+en:
+  simple_form:
+    "yes": 'Yes'
+    "no": 'No'
+    required:
+      text: 'required'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Please review the problems below:"
+    # Examples
+    labels:
+      defaults:
+        dob: Date of Birth
+        vet_status: Veteran
+        alcohol_or_drug_abuse: Do you use alcohol or drugs?
+        fleeing: Are you fleeing an abusive situation?
+        incarcerated: Have you been incarcerated?
+        welfare: Are you taking welfare?
+        insufficent_income: Do you have insufficent income?
+        physical_health_issue: Do you have any physical health issues?
+        mental_health_issue: Do you have any mental health issues?
+        exchange_for_sex: Are you taking money in exchange for sex?
+    include_blanks:
+      defaults:
+        sex: 'Rather not say'
+    #     password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail to sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   defaults:
+    #     username: 'User name to sign in.'
+    #     password: 'No special characters, please.'
+    # prompts:
+    #   defaults:
+    #     age: 'Select your age'
