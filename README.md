@@ -2,8 +2,8 @@ Idea
 ====
 
 * Smart phone handed out (or user's existing smart phone)
-    * To people coming into shelters, or at risk people
-* Every night, everyone in the system receives a text with a URL to click
+    * To people coming into shelters, or at risk people (try to get them as early as possible)
+* Every night(or maybe week), everyone in the system receives a text with a URL to click
     * URL takes them to a survey to fill out
 * Responding to calls gives you something of value:
     * Donated Uber fare
@@ -14,6 +14,7 @@ Idea
     * Having trouble paying utility bills?
     * Do you have a place to stay?
     * Do you have the skills for this job we found?
+* Use data from phone users who are not homeless, to grade chances. 
 
 
 Technical Terms
