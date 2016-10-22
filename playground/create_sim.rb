@@ -4,17 +4,33 @@ require 'json'
 
 set :port, 9494
 
+# id           :integer          not null, primary key
+#  first_name   :string
+#  last_name    :string
+#  ssn          :string
+#  dob          :date
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  phone_number :string
 def make_user()
 	{
-		"UUID" => Faker::Number.number(10),
-		"First_Name" => Faker::Name.first_name,
-		"Middle_Name" => Faker::Name.first_name,
-		"Last_Name" => Faker::Name.last_name,
-		"Name_Data_Quality" => 1,
-		"SSN" => Faker::Number.number(9),
-		"SSNDataQuality" => 1,
-		"DOB" => Faker::Date.backward(90 * 365),
-		"DOBDataQuality" => 1,
+		:id => Faker::Number.number(10),
+		:first_name => Faker::Name.first_name,
+		:last_name => Faker::Name.last_name,
+		:ssn => Faker::Number.number(9),
+		:dob => Faker::Date.backward(90 * 365),
+		:created_at => Faker::Date.backward(10 * 365),
+		:updated_at => Date.today,
+		:phone_number => Faker::PhoneNumber.phone_number,
+		# "UUID" => Faker::Number.number(10),
+		# "First_Name" => Faker::Name.first_name,
+		# "Middle_Name" => Faker::Name.first_name,
+		# "Last_Name" => Faker::Name.last_name,
+		# "Name_Data_Quality" => 1,
+		# "SSN" => Faker::Number.number(9),
+		# "SSNDataQuality" => 1,
+		# "DOB" => Faker::Date.backward(90 * 365),
+		# "DOBDataQuality" => 1,
 		# "AmIndAKNative" => Faker::Lorem.word,
 		# "Asian" => Faker::Lorem.word,
 		# "Black" => Faker::Lorem.word,
@@ -36,10 +52,10 @@ def make_user()
 		# "OtherTheater" => Faker::Lorem.word,
 		# "MilitaryBranch" => Faker::Lorem.word,
 		# "Discharge_Status" => Faker::Lorem.word,
-		"Date_Created" => Faker::Date.backward(1000),
-		"DateUpdated" => Date.today,
-		"UserID" => Faker::Number.number(10),
-		"PhoneNumber" => Fake.PhoneNumber.phone_number,
+		# "Date_Created" => Faker::Date.backward(1000),
+		# "DateUpdated" => Date.today,
+		# "UserID" => Faker::Number.number(10),
+		# "PhoneNumber" => Fake.PhoneNumber.phone_number,
 	}
 end
 
