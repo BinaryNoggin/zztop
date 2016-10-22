@@ -1,9 +1,6 @@
 require 'twilio-ruby'
 require 'sinatra'
 
-# fake db idea
-$valid_states = [:ask_housing, :ask_location]
-
 $users = {
     1 => {name: "bob"},
     2 => {name: "sam"}
@@ -51,8 +48,9 @@ $transitions = {
     :ask_shelter_perference => -> (user, input) {
         valid_shelters = find_shelters_for(user).keys
 
-        if valid_shelters.contains?(input)
+        if valid_shelters.include?(input)
             set_state(user, :fin, input)
+            #reserve_bed(user, input)
             return "You have a room booked at: " + find_shelters_for(user)[input]
         else
             return "These are the options: " + possible_shelters.to_s
