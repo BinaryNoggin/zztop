@@ -41,7 +41,3 @@ th.phone_number, td.phone_number {
   width: 10em;
 }
 
-/* specific table styles */
-#container {
-	overflow-x:auto;
-}
