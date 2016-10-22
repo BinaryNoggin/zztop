@@ -19,4 +19,4 @@ public/stylesheets/*_[0-9]*.css
 public/attachments/*
 .bundle/config
 .env*
-config/secrets.yml
+
