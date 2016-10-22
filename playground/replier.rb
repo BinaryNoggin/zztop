@@ -14,8 +14,10 @@ $states = {
     2 => {state: :ask_location, last_response: 2}
 }
 
+# The key of the hash is the current state the user is in. 
+# The proc it points to has 2 responsibilities, 1) set the next state 
+# and 2) return a string to be sent back via text
 $transitions = {
-    #(current_state) => proc
     :welcome => ->(user, input) {
         set_state(user, :ask_housing, input)
         return "Are you currently housed? (y or n)"
@@ -70,7 +72,8 @@ $transitions = {
 ### Shelter Lookup
 def find_shelters_for(user)
     {
-        1 => {101 => {name: "Bob's Crab Shack", open_beds: 1}, 102 => {name: "Sam's Club", open_beds: 5}}
+        1 => {101 => {name: "Bob's Crab Shack", open_beds: 1}, 
+        102 => {name: "Sam's Club", open_beds: 5}}
     }[user]
 end
 
@@ -145,11 +148,14 @@ def send_response(msg)
 end
 
 ### Rest API 
-
+# This step should be done with the user registration. 
+# And on a timer/tied to the button on the user management page. 
 get '/initiate/:user_id' do 
     initiate_message(params['user_id'])
 end
 
+# This is basically the interface into the state machine.
+# This endpoint can essentially only reply. 
 post '/sms' do
   puts "DEBUG: Input #{params['Body']}!"
 
