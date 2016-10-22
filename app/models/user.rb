@@ -47,7 +47,7 @@ class User < ApplicationRecord
     if dob.nil?
       ""
     else
-      localize dob, format: :long
+      I18n.localize dob, format: :long
     end
   end
 end
