@@ -6,6 +6,8 @@
         th Last Name
         th SSN
         th DOB
+        th Phone Number
+        th Actions
     tbody
       - for user in @users
         tr
@@ -13,6 +15,7 @@
           td.last_name = user.first_name
           td.ssn = user.ssn
           td.dob = user.dob
+          td.phone_number = user.phone_number
 - else
   p No users yet.
 
