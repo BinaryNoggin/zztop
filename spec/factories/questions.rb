@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :question do
-    question "MyText"
+    question "Do you have a place to sleep tonight?"
   end
 end
