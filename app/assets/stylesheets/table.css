@@ -17,6 +17,7 @@ th{
   font-size: 12px;
   color: #fff;
   text-transform: uppercase;
+  min-width: 70px;
 }
 td{
   padding: 15px;
