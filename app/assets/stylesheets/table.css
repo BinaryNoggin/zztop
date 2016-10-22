@@ -41,3 +41,7 @@ th.phone_number, td.phone_number {
   width: 10em;
 }
 
+/* Override DataTable making table backgrounds white. */
+html body table.dataTable tbody tr {
+  background: inherit;
+}
