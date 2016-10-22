@@ -1,133 +1,125 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>css for hackathon</title>
-    <link rel="stylesheet" type="text/css" href="../app/assets/stylesheets/application.css" />
-    <link rel="stylesheet" type="text/css" href="../app/assets/stylesheets/table.css" />
-    <link rel="stylesheet" type="text/css" href="../app/assets/stylesheets/header.css" />
+    <link rel="stylesheet" type="text/css" href="style_table.css" />
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
   </head>
   <body>
-
-    <header>
-      <h1><a href="/">ZZ Top</a></h1>
-      <nav>
-        <ul>
-          <li><a href="/stays/new">Check In</a></li>
-          <li><a href="/stays">Check-Ins</a></li>
-          <li><a href="/users">Clients</a></li>
-          <li><a href="/shelters">Shelters</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>First_Name</th>
-          <th>Last_Name</th>
-          <th>SSN</th>
-          <th>DOB</th>
-          <th>Created_At</th>
-          <th>Updated_At</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="last_name">First</td>
-          <td class="first_name">First</td>
-          <td class="ssn">12</td>
-          <td class="dob">
-          </td>
-          <td class="phone_number">
-          </td>
-          <td class="actions">
-            <a href="/users/1/edit">Edit</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="last_name">a</td>
-          <td class="first_name">a</td>
-          <td class="ssn">a</td>
-          <td class="dob">
-          </td>
-          <td class="phone_number">
-          </td>
-          <td class="actions">
-            <a href="/users/5/edit">Edit</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="last_name">abc</td>
-          <td class="first_name">abc</td>
-          <td class="ssn">abc</td>
-          <td class="dob">
-          </td>
-          <td class="phone_number">abc</td>
-          <td class="actions">
-            <a href="/users/8/edit">Edit</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="last_name">b</td>
-          <td class="first_name">b</td>
-          <td class="ssn">b</td>
-          <td class="dob">1970-12-23</td>
-          <td class="phone_number">12345</td>
-          <td class="actions">
-            <a href="/users/6/edit">Edit</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="last_name">c</td>
-          <td class="first_name">c</td>
-          <td class="ssn">c</td>
-          <td class="dob">1988-10-20</td>
-          <td class="phone_number">12</td>
-          <td class="actions">
-            <a href="/users/7/edit">Edit</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="last_name">v</td>
-          <td class="first_name">v</td>
-          <td class="ssn">v</td>
-          <td class="dob">
-          </td>
-          <td class="phone_number">
-          </td>
-          <td class="actions">
-            <a href="/users/2/edit">Edit</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="last_name">x</td>
-          <td class="first_name">x</td>
-          <td class="ssn">x</td>
-          <td class="dob">
-          </td>
-          <td class="phone_number">
-          </td>
-          <td class="actions">
-            <a href="/users/3/edit">Edit</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="last_name">x</td>
-          <td class="first_name">x</td>
-          <td class="ssn">x</td>
-          <td class="dob">
-          </td>
-          <td class="phone_number">
-          </td>
-          <td class="actions">
-            <a href="/users/4/edit">Edit</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table">
+      <table>
+        <thead class="tbl-header">
+          <tr>
+            <th>ID</th>
+            <th>First_Name</th>
+            <th>Last_Name</th>
+            <th>SSN</th>
+            <th>DOB</th>
+            <th>Created_At</th>
+            <th>Updated_At</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody class="tbl-content">
+          <tr>
+            <td class="last_name">First</td>
+            <td class="first_name">First</td>
+            <td class="ssn">12</td>
+            <td class="dob">
+            </td>
+            <td class="phone_number">
+            </td>
+            <td class="actions">
+              <a href="/users/1/edit">Edit</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="last_name">a</td>
+            <td class="first_name">a</td>
+            <td class="ssn">a</td>
+            <td class="dob">
+            </td>
+            <td class="phone_number">
+            </td>
+            <td class="actions">
+              <a href="/users/5/edit">Edit</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="last_name">abc</td>
+            <td class="first_name">abc</td>
+            <td class="ssn">abc</td>
+            <td class="dob">
+            </td>
+            <td class="phone_number">abc</td>
+            <td class="actions">
+              <a href="/users/8/edit">Edit</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="last_name">b</td>
+            <td class="first_name">b</td>
+            <td class="ssn">b</td>
+            <td class="dob">1970-12-23</td>
+            <td class="phone_number">12345</td>
+            <td class="actions">
+              <a href="/users/6/edit">Edit</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="last_name">c</td>
+            <td class="first_name">c</td>
+            <td class="ssn">c</td>
+            <td class="dob">1988-10-20</td>
+            <td class="phone_number">12</td>
+            <td class="actions">
+              <a href="/users/7/edit">Edit</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="last_name">v</td>
+            <td class="first_name">v</td>
+            <td class="ssn">v</td>
+            <td class="dob">
+            </td>
+            <td class="phone_number">
+            </td>
+            <td class="actions">
+              <a href="/users/2/edit">Edit</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="last_name">x</td>
+            <td class="first_name">x</td>
+            <td class="ssn">x</td>
+            <td class="dob">
+            </td>
+            <td class="phone_number">
+            </td>
+            <td class="actions">
+              <a href="/users/3/edit">Edit</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="last_name">x</td>
+            <td class="first_name">x</td>
+            <td class="ssn">x</td>
+            <td class="dob">
+            </td>
+            <td class="phone_number">
+            </td>
+            <td class="actions">
+              <a href="/users/4/edit">Edit</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    div
   </body>
 </html>
