@@ -38,7 +38,7 @@ class User < ApplicationRecord
     when 0...30
       'A'
     else
-      ''
+      'unknown'
     end
   end
 
@@ -48,5 +48,13 @@ class User < ApplicationRecord
 
   def entered_on
     created_at.to_date
+  end
+
+  def date_of_birth
+    if dob.nil?
+      ""
+    else
+      localize @user.dob, format: :long
+    end
   end
 end
