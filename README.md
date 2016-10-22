@@ -32,3 +32,16 @@ Rejected Ideas
 * Homeless person karma - refer others into the system
 * AirBnB
 * Mattress stores - unused beds every night
+
+
+Proposal
+========
+
+## Why? 
+
+### Person
+- Phones for free if they are willing to provide daily/weekly information via text/web portal.
+- Priority service if in need (because info is in system)
+
+### Org
+
