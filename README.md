@@ -16,6 +16,15 @@ Idea
     * Do you have the skills for this job we found?
 
 
+Technical Terms
+===============
+
+See https://www.hudexchange.info/resources/documents/HMIS-Data-Dictionary.pdf for details.
+
+* User / Client - person who uses services provided by an organization
+* Shelter / CoC/HMIS Project - a unit of an organization that provides services and/or lodging to the homeless
+
+
 Rejected Ideas
 ==============
 
