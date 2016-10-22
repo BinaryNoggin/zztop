@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    models:
+      user:
+        one: Client
+        other: Clients
