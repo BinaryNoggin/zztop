@@ -32,6 +32,24 @@ def make_user()
   }
 end
 
-1000.times do
-  User.create(make_user)
+1000.times do |user_count|
+  user = User.create(make_user)
+  now = Date.today
+  30.times do |i|
+    # puts "#{user_count}:#{user.name} - #{i}"
+    needs_shelter = Random.rand < 0.25
+    date = now - i.days
+    History.create(user: user,
+                   needs_shelter: needs_shelter,
+                   fleeing: Random.rand < (needs_shelter ? 0.60 : 0.05),
+                   incarcerated: Random.rand < 0.03,
+                   welfare: Random.rand < (needs_shelter ? 0.30 : 0.45), # heh, if they can't get welfare, they're more likely to need_shelter
+                   insufficent_income: Random.rand < (needs_shelter ? 50 : 25),
+                   alcohol_or_drug_abuse: Random.rand < 0.20,
+                   physical_health_issue: Random.rand < (needs_shelter ? 50 : 25),
+                   mental_health_issue: Random.rand < (needs_shelter ? 50 : 25),
+                   exchange_for_sex: Random.rand < 0.18,
+                   created_at: date,
+                   updated_at: date)
+  end
 end
