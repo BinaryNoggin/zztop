@@ -22,6 +22,9 @@ def make_user()
 		:created_at => Faker::Date.backward(10 * 365),
 		:updated_at => Date.today,
 		:phone_number => Faker::PhoneNumber.phone_number,
+
+		:sex => ['Male', 'Female', 'Other', 'Don\'t Know'].sample,
+		:vet_status => [0,1].sample,
 		# "UUID" => Faker::Number.number(10),
 		# "First_Name" => Faker::Name.first_name,
 		# "Middle_Name" => Faker::Name.first_name,
