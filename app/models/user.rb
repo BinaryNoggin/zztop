@@ -23,4 +23,9 @@
 #
 
 class User < ApplicationRecord
+  def male?
+    rv = !! sex =~ /\AMale\z/i
+    puts "male?(#{sex.inspect})=> #{rv.inspect}"
+    rv
+  end
 end
