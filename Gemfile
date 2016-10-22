@@ -65,3 +65,4 @@ gem 'rails-footnotes', '~> 4.1', groups: [:development]
 gem 'unicorn', '~> 4.8'
 gem 'rack-handlers', '~> 0.7'
 gem 'capistrano', '~> 3.2'
+gem 'simple_form', '~> 3.3'
