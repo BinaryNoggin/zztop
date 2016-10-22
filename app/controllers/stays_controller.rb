@@ -1,7 +1,7 @@
 class StaysController < ApplicationController
 
   def index
-    @stays = Stay.order(:check_in_date).all
+    @stays = Stay.order(:created_at).all
   end
 
   def new
