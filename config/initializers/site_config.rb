@@ -20,7 +20,7 @@ COPYRIGHT_YEARS = '2008, 2009, 2010'
 COPYRIGHT_OWNER = Etc.getpwuid().gecos # NOTE: This probably isn't what you want -- you should really hard-code this.
 
 # Version of jQuery to use.
-JQUERY_VERSION = '2.1.1'
+JQUERY_VERSION = '3.1.1'
 
 # Google Analytics code. Set this to enable Google Analytics on the site.
 GOOGLE_ANALYTICS_CODE = nil
