@@ -1,0 +1,21 @@
+header {
+  width: 100%;
+  margin: 0;
+  background-color: black;
+  color: #DDDDDD;
+}
+header a {
+  color: #DDDDDD;
+  text-decoration: none;
+}
+header h1, header nav {
+  display: inline-block;
+  padding: 0 20px;
+}
+header nav {
+  float: right;
+}
+header nav ul li {
+  display: inline-block;
+  padding: 10px;
+}

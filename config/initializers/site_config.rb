@@ -5,7 +5,7 @@
 PROJECT_NAME = Rails.root.to_s.split('/').last
 
 # Override these - they will be used in the default layout.
-SITE_NAME = PROJECT_NAME.humanize.titleize
+SITE_NAME = "ZZ Top"
 SITE_TITLE = SITE_NAME + ('production' == Rails.env ? '' : " (#{Rails.env.upcase})")
 
 # Hostname of the site. This will be used by Clearance to generate URLs in emails, to create a CSS signature, and possibly in several other places.
