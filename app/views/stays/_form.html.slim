@@ -5,11 +5,5 @@
   div.field
     = f.label :user
     = f.collection_select :user_id, User.order(:last_name, :first_name), :id, :last_name
-  div.field
-    = f.label :check_in_date
-    = f.date_field :check_in_date
-  div.field
-    = f.label :check_out_date
-    = f.date_field :check_out_date
   div.actions
     = f.submit
