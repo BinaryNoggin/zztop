@@ -25,8 +25,3 @@ header nav ul li {
   display: inline-block;
   padding: 10px;
 }
-
-#container {
-	clear: both;
-	overflow-x:auto;
-}
