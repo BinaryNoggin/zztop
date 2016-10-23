@@ -63,7 +63,7 @@ class TwilioController < ApplicationController
   end
 
   def respond_with_shelters(r, user)
-    shelters = Coc.find_for_user(user).select {|h| h[:services].include?(:housing)}
+    shelters = true # Coc.find_for_user(user).select {|h| h[:services].include?(:housing)}
     if shelters
       r.Say "We'll text you a list of shelters that might be able to take you tonight.", voice: "alice"
     else
