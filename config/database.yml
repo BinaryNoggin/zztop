@@ -12,13 +12,14 @@ default: &default
 development:
   <<: *default
   database: zztop_development
-  password:
+  user: postgres
+  password: Tropicana
   host: localhost
 
 test: &test
   <<: *default
   database: zztop_test
-  password:
+  password: Tropicana
   host: localhost
 
 cucumber:
