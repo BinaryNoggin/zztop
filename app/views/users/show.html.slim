@@ -1,19 +1,43 @@
 
-.user
-  h1.name
-    = @user.name
-  span Grade:
-  span.grade id="grade_#{@user.letter_grade}" #{@user.letter_grade}
-  .phone_number #{@user.phone_number}
-  .actions
-    = button_to 'Call', new_user_call_path(@user), method: :get
-  .entered_on First Entered System On: #{localize @user.entered_on, format: :long}
-  .sex Sex: #{@user.sex}
-  .dob DOB: #{@user.date_of_birth}
-  .ssn SSN: #{@user.ssn}
-  .veteran Veteran: #{@user.vet_status}
-  .services
-    span Available Services:
-    ul
-      - for service in @services
-        li = service
+div[class="user panel panel-default"]
+  .panel-heading
+    h1.name
+      = @user.name
+  .panel-body
+    table[class="user-info table table-bordered table-striped"]
+      tr
+        td
+          span Grade:
+        td
+          span.grade id="grade_#{@user.letter_grade}" #{@user.letter_grade}
+      tr
+        td Phone Number:
+        td.phone_number #{@user.phone_number}
+      tr
+        td First Entered System On:
+        td.entered_on #{localize @user.entered_on, format: :long}
+      tr
+        td Sex:
+        td.sex #{@user.sex}
+      tr
+        td DOB:
+        td.dob#{@user.date_of_birth}
+      tr
+        td SSN:
+        td.ssn #{@user.ssn}
+      tr
+        td Veteran:
+        td.veteran #{@user.vet_status}
+      tr
+        td Services:
+        td.services
+          span Available Services:
+          ul
+            - for service in @services
+              li = service
+  panel-footer
+    .actions
+      = button_to "Call #{@user.name}", new_user_call_path(@user), {method: :get, class: "btn btn-primary btn-lg"}
+  br
+  br
+  br

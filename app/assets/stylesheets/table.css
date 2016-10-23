@@ -1,16 +1,17 @@
-table{
-  width:100%;
+table.to-be-data-table {
+  width: 95%;
+  margin: 50px;
 }
-thead{
+table.to-be-data-table thead{
   background-color: rgba(255,255,255,0.3);
  }
-tbody{
+table.to-be-data-table tbody{
   height:300px;
   overflow-x:auto;
   margin-top: 0px;
   border: 1px solid rgba(255,255,255,0.3);
 }
-th{
+table.to-be-data-table  th{
   padding: 20px 15px;
   text-align: left;
   font-weight: 500;
@@ -19,7 +20,7 @@ th{
   text-transform: uppercase;
   min-width: 70px;
 }
-td{
+table.to-be-data-table td{
   padding: 15px;
   text-align: left;
   vertical-align:middle;
