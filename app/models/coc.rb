@@ -20,9 +20,9 @@ Biddle = Coc.new('Biddle House') do |user|
   [:meal, :housing] if user.ssn.present?
 end
 CFWF = Coc.new('Center for Women and Families') do |user|
-  [:housing] if user.dob + 16.years >= Date.today || !user.male?
+  [:housing] if user.older_than?(16) || !user.male?
 end
-MealsOnWheels = Coc.new('Meals on Wheels') do |user|
+MealsOnWheels = Coc.new('Meals on Wheels') do |_user|
   [:meal]
 end
 
