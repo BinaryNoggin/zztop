@@ -10,3 +10,8 @@ set :deploy_to, "/var/www/#{application}/#{stage}"
 #role :web, "#{prod_server}", :port => 1776, :user => 'craigb'
 server "#{prod_server}", :app, :web, :port => 1776, :user => 'craigb'
 role :db,  "#{prod_server}", :primary => true, :port => 1776, :user => 'craigb'
+
+config.cache_classes = true
+config.serve_static_assets = true
+config.assets.compile = true
+config.assets.digest = true
