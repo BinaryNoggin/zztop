@@ -10,8 +10,10 @@ class TwilioController < ApplicationController
     response = Twilio::TwiML::Response.new do |r|
       case answer
       when 1
+        user.update_question(:needs_shelter, true)
         ask_survey_question(r)
       when 2
+        user.update_question(:needs_shelter, false)
         get_shelter(r)
       else
         ask_for_shelter_again(r)
