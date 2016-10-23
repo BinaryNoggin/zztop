@@ -17,7 +17,7 @@ class TwilioController < ApplicationController
 
   def voice
     Twilio::TwiML::Response.new do |r|
-      r.Gather numDigits: 1, action: twilio_respond_to_homeless_voice_url(user) do |g|
+      r.Gather numDigits: 1, action: user_twilio_respond_to_homeless_voice_url(user) do |g|
         g.Say "Hey there, #{user.first_name}. Do you have a place to stay tonight? Press one for yes or two for no.", :voice => 'alice'
       end
     end
