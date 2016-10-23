@@ -1,12 +1,16 @@
-= form_for(@shelter) do |f|
-  div.field
-    = f.label :name
-    = f.text_field :name
-  div.field
-    = f.label :address
-    = f.text_field :address
-  div.field
-    = f.label :description
-    = f.text_field :description
-  div.actions
-    = f.submit
+div[class="panel panel-default"]
+  .panel-heading 
+    h1 Add New Shelter
+  .panel-body
+    = form_for(@shelter) do |f|
+      div.field
+        = f.label :name
+        = f.text_field :name
+      div.field
+        = f.label :address
+        = f.text_field :address
+      div.field
+        = f.label :description
+        = f.text_field :description
+      div.actions
+        = f.submit "Add New Shelter", {class:"btn btn-info"}
