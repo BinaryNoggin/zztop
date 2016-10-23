@@ -9,14 +9,23 @@ class HistoryController < ApplicationController
   end
 
   def update
-    @history = History.where(user_id: params[:id]).order(:updated_at).first
+    if params[:id].to_i == 0
+      @history = History.all
 
-    @history[:rating] = _grade_history(@history)[0] * 100
-
-    if @history.save
-      redirect_to action: 'index', notice: 'History successfully created.'
+      @history.each do |entry|
+        entry[:rating] = _grade_history(entry)[0] * 100
+        entry.save
+      end
     else
-      render action: 'new'
+      @history = History.where(user_id: params[:id]).order(:updated_at).first
+
+      @history[:rating] = _grade_history(@history)[0] * 100
+
+      if @history.save
+        redirect_to action: 'index', notice: 'History successfully created.'
+      else
+        render action: 'new'
+      end
     end
   end
 
