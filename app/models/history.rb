@@ -29,4 +29,8 @@
 
 class History < ApplicationRecord
   belongs_to :user
+
+  def self.random_question
+    %i[fleeing incarcerated welfare insufficent_income alcohol_or_drug_abuse physical_health_issue mental_health_issue exchange_for_sex].sample
+  end
 end

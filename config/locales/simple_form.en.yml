@@ -17,7 +17,7 @@ en:
         vet_status: Veteran
         alcohol_or_drug_abuse: Do you use alcohol or drugs?
         fleeing: Are you fleeing an abusive situation?
-        incarcerated: Have you been incarcerated in the last seven(7) days?
+        incarcerated: Have you been incarcerated in the last seven days?
         welfare: Are you taking welfare?
         insufficent_income: Do you have insufficent income?
         physical_health_issue: Do you have any physical health issues?
