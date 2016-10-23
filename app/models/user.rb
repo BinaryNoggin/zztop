@@ -20,15 +20,18 @@
 #  exchange_for_sex      :boolean
 #  sex                   :string
 #  vet_status            :boolean
-#  grade                 :decimal(8, 5)
 #
 
 class User < ApplicationRecord
   has_many :histories
 
+  def most_recent_history
+    histories.order(created_at: :asc).last || histories.build
+  end
+
   def update_question(question, answer)
-    current_history = history || build_history
-    current_history.update_attribute(question, answer)
+    new_history = histories.build(most_recent_history.attributes.merge(id: nil))
+    new_history.update_attribute(question, answer)
   end
 
   def male?
@@ -50,6 +53,10 @@ class User < ApplicationRecord
     else
       'unknown'
     end
+  end
+
+  def grade
+    most_recent_history.rating
   end
 
   def name

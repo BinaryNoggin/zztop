@@ -20,3 +20,4 @@ public/attachments/*
 .bundle/config
 .env*
 
+config/database.yml config/database.yml
