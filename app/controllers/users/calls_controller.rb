@@ -8,6 +8,7 @@ class Users::CallsController < ApplicationController
       to: user.call_number,
       url: user_twilio_voice_url(user)
     )
+    redirect_to user
   end
 
   private def client
