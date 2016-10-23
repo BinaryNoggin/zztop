@@ -1,18 +1,20 @@
+.actions
+  = button_to 'Add Client', new_user_path, method: :get
+
+br
+
 - unless @users.nil?
   table#users
     thead
       tr
-        th Last Name
-        th First Name
-        th SSN
-        th DOB
-        th Phone Number
-        th Actions
+        th.last_name Last Name
+        th.first_name First Name
+        th.ssn SSN
+        th.dob DOB
+        th.phone_number Phone Number
+        th.grade Grade
+        th.actions Actions
     tbody
       = render @users
 - else
   p No clients yet.
-
-br
-  .actions
-    a href="/users/new" Add Client

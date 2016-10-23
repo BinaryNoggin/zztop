@@ -20,12 +20,51 @@
 #  exchange_for_sex      :boolean
 #  sex                   :string
 #  vet_status            :boolean
+#  grade                 :decimal(8, 5)
 #
 
 class User < ApplicationRecord
+
+  has_many :histories
+
   def male?
-    rv = !! sex =~ /\AMale\z/i
-    puts "male?(#{sex.inspect})=> #{rv.inspect}"
-    rv
+    !! (sex =~ /\Amale\z/i)
+  end
+
+  def letter_grade
+    case grade
+    when 80..100
+      'F'
+    when 65...80
+      'D'
+    when 50...65
+      'C'
+    when 30...50
+      'B'
+    when 0...30
+      'A'
+    else
+      'unknown'
+    end
+  end
+
+  def name
+    "#{first_name} #{last_name}"
+  end
+
+  def entered_on
+    created_at.to_date
+  end
+
+  def date_of_birth
+    if dob.nil?
+      ""
+    else
+      I18n.localize dob, format: :long
+    end
+  end
+
+  def call_number
+    "+1#{phone_number}"
   end
 end

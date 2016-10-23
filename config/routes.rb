@@ -3,9 +3,13 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
-  resources :users
+  resources :users do
+    resource :call, module: :users
+    post "twilio/voice", to: "twilio#voice"
+    get "twilio/voice", to: "twilio#voice"
+  end
+
   resources :shelters
   resources :stays
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :history, only: [:index]
 end

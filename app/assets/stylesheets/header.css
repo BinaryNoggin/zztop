@@ -3,6 +3,7 @@ header {
   margin: 0;
   background-color: black;
   color: #DDDDDD;
+  clear: both;
 }
 header a {
   color: #DDDDDD;
@@ -10,12 +11,22 @@ header a {
 }
 header h1, header nav {
   display: inline-block;
-  padding: 0 20px;
+  padding-left: 20px;
+  background-color: black;
+  background-color: black;
+
 }
 header nav {
   float: right;
+  background-color: black;
+
 }
 header nav ul li {
   display: inline-block;
   padding: 10px;
+}
+
+#container {
+	clear: both;
+	overflow-x:auto;
 }

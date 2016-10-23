@@ -19,8 +19,6 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'faker'
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -68,3 +66,4 @@ gem 'unicorn', '~> 4.8'
 gem 'rack-handlers', '~> 0.7'
 gem 'capistrano', '~> 3.2'
 gem 'simple_form', '~> 3.3'
+gem 'twilio-ruby', '~> 4.11.1'

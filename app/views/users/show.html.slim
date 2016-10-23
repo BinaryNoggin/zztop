@@ -1,0 +1,10 @@
+.user
+  .grade id="grade_#{@user.letter_grade}" #{@user.letter_grade}
+  .name
+    = @user.name
+  .phone_number #{@user.phone_number}
+  .entered_on First Entered System On: #{localize @user.entered_on, format: :long}
+  .sex Sex: #{@user.sex}
+  .dob DOB: #{@user.date_of_birth}
+  .ssn SSN: #{@user.ssn}
+  .veteran Veteran: #{@user.vet_status}

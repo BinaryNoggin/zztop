@@ -37,7 +37,12 @@
     <script type="text/javascript">document.createElement('abbr');</script>
 
     <!-- Include jQuery. If production, pull it from Google. -->
-    <!-- %= jquery_include_tag % -->
+    <%= jquery_include_tag %>
+
+    <!-- Include DataTables plugin for jQuery. -->
+    <%= stylesheet_link_tag '//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css' %>
+    <%= javascript_include_tag '//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js' %>
+    <script type="text/javascript">jQuery(document).ready(function(){jQuery('table').DataTable();});</script>
 
     <!-- Include all other JavaScript files. If production, minimize and combine into a single file. -->
     <%= javascript_include_tag "application", "data-turbolinks-track" => false %>

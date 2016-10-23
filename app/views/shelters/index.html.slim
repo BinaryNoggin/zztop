@@ -1,3 +1,8 @@
+.actions
+  = button_to 'Add Shelter', new_shelter_path, method: :get
+
+br
+
 - unless @shelters.nil?
   table#shelters
     thead
@@ -9,10 +14,6 @@
         tr
           td.last_name = shelter.name
           td.actions
-            = link_to 'Edit', edit_shelter_path(shelter)
+            = button_to 'Edit', edit_shelter_path(shelter), method: :get
 - else
   p No shelters yet.
-
-br
-  .actions
-    a href="/shelters/new" Add Shelter

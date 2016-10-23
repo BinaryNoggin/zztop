@@ -1,10 +1,11 @@
 tr
-  td.last_name = user.first_name
+  td.last_name = link_to user.last_name, user_path(user)
   td.first_name = user.first_name
   td.ssn = user.ssn
   td.dob = user.dob
   td.phone_number = user.phone_number
+  td.grade = user.letter_grade
   td.actions
     ul
-      li= link_to 'Edit', edit_user_path(user)
-      li= link_to 'Call', home_path
+      li= button_to 'Edit', edit_user_path(user), method: :get
+      li= button_to 'Call', new_user_call_path(user), method: :get, remote: true
