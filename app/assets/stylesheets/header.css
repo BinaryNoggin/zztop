@@ -1,27 +1,28 @@
 header {
   width: 100%;
-  margin: 0;
   background-color: black;
-  color: #DDDDDD;
-  clear: both;
 }
-header a {
+
+a.navbar-brand  {
+  padding: 5px 5px,
+}
+
+/*header a {
   color: #DDDDDD;
   text-decoration: none;
 }
 header h1, header nav {
   display: inline-block;
   padding-left: 20px;
-  background-color: black;
-  background-color: black;
+  background-color: white;
+  background-color: white;
 
 }
 header nav {
   float: right;
-  background-color: black;
+  background-color: white;
 
 }
 header nav ul li {
   display: inline-block;
-  padding: 10px;
-}
+}*/
