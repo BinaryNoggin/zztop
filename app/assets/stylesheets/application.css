@@ -37,6 +37,12 @@
    font-family: 'Roboto', sans-serif
 }
 
+#container {
+   clear: both;
+   overflow-x:auto;
+   margin: 12px;
+}
+
 form {
    position: relative;
 }
