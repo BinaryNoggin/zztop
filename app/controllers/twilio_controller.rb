@@ -25,7 +25,7 @@ class TwilioController < ApplicationController
     render_twiml response
   end
 
-  def user(User)
+  def user
     @user ||= User.find(params[:user_id])
   end
 end
