@@ -1,5 +1,7 @@
 
 .user
+  .actions
+    = button_to 'Call', new_user_call_path(user), method: :get
   .grade id="grade_#{@user.letter_grade}" #{@user.letter_grade}
   .name
     = @user.name
