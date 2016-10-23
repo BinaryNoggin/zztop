@@ -23,7 +23,7 @@ class TwilioController < ApplicationController
 
   def respond_to_question_voice
     answer = params[:Digits]
-    user.update_question(question, answer)
+    user.update_question(question, answer == "1")
     response = Twilio::TwiML::Response.new do |r|
       g.Say "Thanks for helping us keep our records up to date.", voice: "alice"
     end
