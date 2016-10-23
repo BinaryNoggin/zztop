@@ -45,7 +45,14 @@
     <!-- Include DataTables plugin for jQuery. -->
     <%= stylesheet_link_tag '//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css' %>
     <%= javascript_include_tag '//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js' %>
-    <script type="text/javascript">jQuery(document).ready(function(){jQuery('table.to-be-data-table').DataTable();});</script>
+    <script type="text/javascript">
+      jQuery(document).ready(
+        function(){
+          jQuery('table.to-be-data-table').DataTable();
+          jQuery('[data-toggle="popover"]').popover();
+        }
+      );
+    </script>
 
     <!-- Include all other JavaScript files. If production, minimize and combine into a single file. -->
     <%= javascript_include_tag "application", "data-turbolinks-track" => false %>
@@ -102,6 +109,10 @@
             <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
             <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
         </ul>       
+      </div>
+
+      <div class="col-md-12 text-center" style="color: white">
+        Copyright © 2016 Phome Home
       </div>
     </footer>
 
