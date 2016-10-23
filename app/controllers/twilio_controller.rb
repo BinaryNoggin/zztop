@@ -10,11 +10,11 @@ class TwilioController < ApplicationController
     response = Twilio::TwiML::Response.new do |r|
       case answer
       when 1
-        ask_survey_question(r)
         user.update_question(:needs_shelter, true)
+        ask_survey_question(r)
       when 2
-        respond_with_shelters(r, user)
         user.update_question(:needs_shelter, false)
+        respond_with_shelters(r, user)
       else
         ask_for_shelter_again(r)
       end
@@ -63,16 +63,17 @@ class TwilioController < ApplicationController
   end
 
   def respond_with_shelters(r, user)
-    shelters = Coc.find_for_user(User.second).select {|h| h[:services].include?(:housing)}.map {|h| h[:name]}.join(', ')
-    if shelters
-      r.Say "You may be able to stay at #{shelters}", voice: "alice"
+    shelters = Coc.find_for_user(User.second).select {|h| h[:services].include?(:housing)}.map {|h| h[:name]}
+    if shelters.present?
+      r.Say "You may be able to stay at #{shelters.join(', ')}", voice: "alice"
+      send_shelter_text(shelters.join(', '), user)
     else
       r.Say "We don't know of any shelters that will take you. We're very sorry, #{user.first_name}.", voice: "alice"
     end
   end
 
   # untested
-  def send_shelter_text(shelters, user, text)
+  def send_shelter_text(shelters, user)
     Twilio::REST::Client.new.messages.create(
       from: PHONE_NUMBER,
       to: user.call_number,
