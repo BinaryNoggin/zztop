@@ -10,7 +10,7 @@ class HistoryController < ApplicationController
 
   def update
     if params[:id].to_i == 0
-      @history = History.where(:state => nil)
+      @history = History.where(:rating => nil)
 
       @history.each do |entry|
         entry[:rating] = _grade_history(entry)[0] * 100
