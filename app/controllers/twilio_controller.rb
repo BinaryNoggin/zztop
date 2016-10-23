@@ -14,7 +14,7 @@ class TwilioController < ApplicationController
         ask_survey_question(r)
       when 2
         user.update_question(:needs_shelter, false)
-        get_shelter(r)
+        respond_with_shelters(r, user)
       else
         ask_for_shelter_again(r)
       end
@@ -62,7 +62,20 @@ class TwilioController < ApplicationController
     end
   end
 
-  def get_shelter(r)
-    r.Say "We are working on getting you shelter, and will call when we find something. Goodbye, #{user.first_name}.", voice: "alice"
+  def respond_with_shelters(r, user)
+    shelters = Coc.find_for_user(user).select {|h| h[:services].include?(:housing)}
+    if shelters
+      r.Say "We'll text you a list of shelters that might be able to take you tonight.", voice: "alice"
+      send_shelter_text(shelters, user)
+    else
+      r.Say "We don't know of any shelters that will take you. We're very sorry, #{user.first_name}.", voice: "alice"
+    end
+  end
+
+  def send_shelter_text(shelters, user, text)
+    Twilio::REST::Client.new.messages.create(
+      from: PHONE_NUMBER,
+      to: user.call_number,
+      body: "Blah blah blah shelters")
   end
 end
