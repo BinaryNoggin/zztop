@@ -12,7 +12,8 @@ default: &default
 development:
   <<: *default
   database: zztop_development
-  password:
+  user: postgres
+  password: password
   host: localhost
 
 test: &test

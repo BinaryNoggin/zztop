@@ -12,5 +12,5 @@ Rails.application.routes.draw do
 
   resources :shelters
   resources :stays
-  resources :history, only: [:index]
+  resources :history
 end
