@@ -47,6 +47,11 @@ td.actions ul li {
   margin: 0;
 }
 
+table#users td.last_name a {
+  text-decoration: none;
+  color: #DDDDDD;
+}
+
 /* Override DataTable making table backgrounds white. */
 html body table.dataTable tbody tr {
   background: inherit;
