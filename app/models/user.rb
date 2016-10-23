@@ -20,7 +20,6 @@
 #  exchange_for_sex      :boolean
 #  sex                   :string
 #  vet_status            :boolean
-#  grade                 :decimal(8, 5)
 #
 
 class User < ApplicationRecord
@@ -54,6 +53,10 @@ class User < ApplicationRecord
     else
       'unknown'
     end
+  end
+
+  def grade
+    most_recent_history.rating
   end
 
   def name
