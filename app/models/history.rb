@@ -4,7 +4,6 @@
 #
 #  id                    :integer          not null, primary key
 #  user_id               :integer
-#  zipcode               :string
 #  needs_shelter         :boolean
 #  rating                :integer
 #  fleeing               :boolean

@@ -67,6 +67,10 @@ class User < ApplicationRecord
     end
   end
 
+  def older_than?(age_in_years)
+    dob && dob + age_in_years.years >= Date.today
+  end
+
   def call_number
     "+1#{phone_number}"
   end
