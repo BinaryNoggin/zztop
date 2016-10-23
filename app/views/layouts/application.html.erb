@@ -45,11 +45,12 @@
     <!-- Include DataTables plugin for jQuery. -->
     <%= stylesheet_link_tag '//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css' %>
     <%= javascript_include_tag '//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js' %>
+    <%= javascript_include_tag 'http://benpickles.github.io/peity/jquery.peity.js' %>
     <script type="text/javascript">
       jQuery(document).ready(
         function(){
           jQuery('table.to-be-data-table').DataTable();
-          jQuery('[data-toggle="popover"]').popover();
+          $(".bar").peity("bar")
         }
       );
     </script>
