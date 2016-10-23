@@ -59,7 +59,7 @@ form {
    position: relative;
 }
 
-input {
+.field input {
    padding: 15px;
    border: 1px solid #ccc;
    border-radius: 3px;
@@ -70,17 +70,13 @@ input {
    font-size: 13px;
 }
 
-.actions input {
-   font-weight: bold;
-   cursor: pointer;
-   padding: 10px 5px;
-   margin: 10px 5px;
-   position: relative;
-   text-align: center;
-   background: #FAC892 ;
-}
-
-.actions input:hover {
-   color: white;
-   background: #F59331 ;
+input[type=button], input[type=submit] {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  color: #2C3E50 ;
+  font-size: 13px;
 }
