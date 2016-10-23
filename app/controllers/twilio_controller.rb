@@ -65,7 +65,7 @@ class TwilioController < ApplicationController
   def respond_with_shelters(r, user)
     shelters = Coc.find_for_user(User.second).select {|h| h[:services].include?(:housing)}.map {|h| h[:name]}
     if shelters.present?
-      msg = "You may be able to stay at #{shelters.to_sentence}"
+      msg = "You may be able to stay at #{shelters.to_sentence(two_words_connector: 'or')}"
       r.Say msg, voice: "alice"
       send_shelter_text(msg, user)
     else
@@ -78,6 +78,6 @@ class TwilioController < ApplicationController
     Twilio::REST::Client.new.messages.create(
       from: PHONE_NUMBER,
       to: user.call_number,
-      body: "Blah blah blah shelters")
+      body: msg*3)
   end
 end
