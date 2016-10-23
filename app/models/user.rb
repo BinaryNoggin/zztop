@@ -24,11 +24,15 @@
 #
 
 class User < ApplicationRecord
-  has_one :history
+  has_many :histories
 
   def update_question(question, answer)
     current_history = history || build_history
     current_history.update_attribute(question, answer)
+  end
+
+  def male?
+    !! (sex =~ /\Amale\z/i)
   end
 
   def letter_grade

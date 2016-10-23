@@ -11,6 +11,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    cocs_with_services = Coc.find_for_user(@user)
+    @services = cocs_with_services.map {|h| "#{h[:name]}: #{h[:services].map(&:to_s).join(', ')}"}
   end
 
   def new

@@ -1,3 +1,4 @@
+
 .user
   .grade id="grade_#{@user.letter_grade}" #{@user.letter_grade}
   .name
@@ -8,3 +9,8 @@
   .dob DOB: #{@user.date_of_birth}
   .ssn SSN: #{@user.ssn}
   .veteran Veteran: #{@user.vet_status}
+  .services
+    span Services:
+    ul
+      - for service in @services
+        li = service
