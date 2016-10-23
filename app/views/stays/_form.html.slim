@@ -1,9 +1,17 @@
-= form_for(@stay) do |f|
-  div.field
-    = f.label :shelter
-    = f.collection_select :shelter_id, Shelter.order(:name), :id, :name
-  div.field
-    = f.label :user
-    = f.collection_select :user_id, User.order(:last_name, :first_name), :id, :name
-  div.actions
-    = f.submit
+div[class="panel panel-default"]
+	.panel-heading 
+		h1 Check Into a Shelter
+	div[class="panel-body" style="padding:100px"]
+		= form_for(@stay) do |f|
+		  div[class="field form-group row"]
+		  	label[class="col-xs-2 col-form-label"] 
+		    	= f.label :shelter
+	    	div[class="col-xs-10"]
+		    	= f.collection_select :shelter_id, Shelter.order(:name), :id, :name
+		  div[class="field form-group row"]
+		    label[class="col-xs-2 col-form-label"] 
+		    	= f.label :user
+	    	div[class="col-xs-10"]
+		    	= f.collection_select :user_id, User.order(:last_name, :first_name), :id, :name
+		  div.actions
+		    = f.submit
