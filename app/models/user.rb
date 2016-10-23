@@ -24,7 +24,12 @@
 #
 
 class User < ApplicationRecord
-  has_many :histories
+  has_one :history
+
+  def update_question(question, answer)
+    current_history = history || build_history
+    current_history.update_attribute(question, answer)
+  end
 
   def letter_grade
     case grade
