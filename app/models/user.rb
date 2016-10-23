@@ -25,13 +25,13 @@
 class User < ApplicationRecord
   has_many :histories
 
-  def most_recent_histroy
-    hsitories.last || histories.new
+  def most_recent_history
+    histories.last || histories.build
   end
 
   def update_question(question, answer)
-    current_history = history || build_history
-    current_history.update_attribute(question, answer)
+    new_history = histories.build(most_recent_history.attributes.merge(id: nil))
+    new_history.update_attribute(question, answer)
   end
 
   def male?
