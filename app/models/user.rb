@@ -17,8 +17,12 @@
 class User < ApplicationRecord
   has_many :histories
 
-  def most_recent_history
+  def most_recent_history()
     histories.order(created_at: :asc).last || histories.build
+  end
+
+  def most_recent_20_history
+    histories.order(created_at: :asc).last(20) || histories.build
   end
 
   def update_question(question, answer)
@@ -49,6 +53,10 @@ class User < ApplicationRecord
 
   def grade
     most_recent_history.rating
+  end
+
+  def grade_stats
+    most_recent_20_history.map{|h| h.rating}
   end
 
   def name
