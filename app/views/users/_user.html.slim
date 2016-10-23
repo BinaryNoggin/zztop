@@ -8,4 +8,4 @@ tr
   td.actions
     ul
       li= button_to 'Edit', edit_user_path(user), method: :get
-      li= button_to 'Call', new_user_call_path(user), method: :get
+      li= button_to 'Call', new_user_call_path(user), method: :get, remote: true
