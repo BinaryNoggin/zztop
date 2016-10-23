@@ -10,6 +10,9 @@
 
     <!-- Google will display this in its search results. TODO: Determine if the page wants to set this. -->
     <meta name="description" content="" />
+    
+    <!-- For mobile viewport     -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favorites icon for IE5+ and W3C-compliant browsers. -->
     <!-- The Rails Logo (downloaded from http://railslogo.com) was created by Kevin Milden and is distrubuted under the BY-ND Creative Commons Licence. -->
@@ -60,20 +63,22 @@
   <body id="<%= CSS_SIGNATURE %>">
 
     <header>
-      <h1>
-        <a href="/">
-          <%= image_tag 'phome_web-logo_web_logo.png', size: "100" %>
-        </a>
-      </h1>
-
       <nav class="navbar navbar-default">
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="<%= new_stay_path %>">Check In</a></li>
-            <li class="active"><a href="<%= stays_path %>">Check-Ins</a></li>
-            <li class="active"><a href="<%= users_path %>">Clients</a></li>
-            <li class="active"><a href="<%= shelters_path %>">Shelters</a></li>
-          </ul>
+        <div class="container-fluid"> 
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">
+              <%= image_tag 'phome_web-logo_web_logo.png', :size => "45" %>
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="<%= new_stay_path %>">Check In</a></li>
+              <li class="active"><a href="<%= stays_path %>">Check-Ins</a></li>
+              <li class="active"><a href="<%= users_path %>">Clients</a></li>
+              <li class="active"><a href="<%= shelters_path %>">Shelters</a></li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>

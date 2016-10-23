@@ -26,7 +26,7 @@ class User < ApplicationRecord
   has_many :histories
 
   def most_recent_history
-    histories.last || histories.build
+    histories.order(created_at: :asc).last || histories.build
   end
 
   def update_question(question, answer)
