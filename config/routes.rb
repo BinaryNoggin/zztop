@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'home/index'
 
   resources :users do
-    resource :call
+    resource :call, module: :users
     post "twilio/voice", to: "twilio#voice"
     get "twilio/voice", to: "twilio#voice"
   end
