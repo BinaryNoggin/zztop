@@ -14,4 +14,4 @@ div[class="panel panel-default"]
 	    	div[class="col-xs-10"]
 		    	= f.collection_select :user_id, User.order(:last_name, :first_name), :id, :name
 		  div.actions
-		    = f.submit
+		    = f.submit "Check In", {class:"btn btn-info"}

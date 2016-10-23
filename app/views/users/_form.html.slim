@@ -1,10 +1,14 @@
-= simple_form_for(@user) do |f|
-  = f.input :first_name
-  = f.input :last_name
-  = f.input :sex, collection: ["Male", "Female", "Other"], include_blank: true
-  = f.input :phone_number
-  = f.input :ssn
-  = f.input :dob
-  = f.input :vet_status, as: :radio_buttons
-  div.actions
-    = f.submit
+div[class="panel panel-default"]
+	.panel-heading 
+		h1 Creating new Client
+	div[class="panel-body" style="padding:100px"]
+		= simple_form_for(@user) do |f|
+		  = f.input :first_name
+		  = f.input :last_name
+		  = f.input :sex, collection: ["Male", "Female", "Other"], include_blank: true
+		  = f.input :phone_number
+		  = f.input :ssn
+		  = f.input :dob
+		  = f.input :vet_status, as: :radio_buttons
+		  div.actions
+		    = f.submit "Create Client", {class:"btn btn-info"}

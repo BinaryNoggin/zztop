@@ -1,10 +1,10 @@
-.actions
-  = button_to 'Check in a Client', new_stay_path, method: :get
+div[class="actions text-center"]
+  = button_to 'Check in a Client', new_stay_path, {method: :get, class: "btn btn-info"}
 
 br
 
 - unless @stays.nil?
-  table#stays
+  table[class="to-be-data-table"]
     thead
       tr
         th Shelter
