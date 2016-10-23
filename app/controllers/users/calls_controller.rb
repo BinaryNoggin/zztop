@@ -6,7 +6,7 @@ class Users::CallsController < ApplicationController
     client.calls.create(
       from: "+15736774332",
       to: user.call_number,
-      url: user_twilio_url(user)
+      url: user_twilio_voice_url(user)
     )
   end
 
