@@ -22,6 +22,9 @@ end
 CFWF = Coc.new('Center for Women and Families') do |user|
   [:housing] if user.dob + 16.years >= Date.today || !user.male?
 end
+MealsOnWheels = Coc.new('Meals on Wheels') do |user|
+  [:meal]
+end
 
 
 # Booked = Coc.new('Always Booked') do |user|
