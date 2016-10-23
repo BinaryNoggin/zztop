@@ -26,6 +26,10 @@
 class User < ApplicationRecord
   has_many :histories
 
+  def most_recent_histroy
+    hsitories.last || histories.new
+  end
+
   def update_question(question, answer)
     current_history = history || build_history
     current_history.update_attribute(question, answer)
