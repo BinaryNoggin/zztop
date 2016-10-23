@@ -38,7 +38,7 @@ div[class="user panel panel-default"]
             - for service in @services
               li = service
   panel-footer
-    .actions
+    .actions[style="padding-left:20px"]
       = button_to "Call #{@user.name}", new_user_call_path(@user), {method: :get, class: "btn btn-primary btn-lg"}
   br
   br
